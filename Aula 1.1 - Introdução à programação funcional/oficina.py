@@ -8,5 +8,15 @@ notas_pop = [
     4, 2, 1, 2, 5, 2, 4, 4, 0, 1
 ]
 
-print(notas_rock)
-print(notas_pop)
+def categorizar(nota):
+    if 0 <= nota <= 1:
+        return "ruim"
+    elif 2 <= nota <= 3:
+        return "mediana"
+    elif 4 <= nota <= 5:
+        return "boa"
+
+
+print(categorizar(1))
+print(categorizar(3))
+print(categorizar(5))
