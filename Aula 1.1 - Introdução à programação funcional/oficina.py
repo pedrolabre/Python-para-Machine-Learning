@@ -17,8 +17,13 @@ def categorizar(nota):
         return "boa"
 
 
-print(categorizar(1))
-print(categorizar(3))
-print(categorizar(5))
+categorias_rock = list(map(categorizar, notas_rock))
+categorias_pop = list(map(categorizar, notas_pop))
+
+print("Categorias de Rock:")
+print(categorias_rock)
+
+print("\nCategorias de Pop:")
+print(categorias_pop)
 
 input ("\nPressione Enter para encerrar...")
