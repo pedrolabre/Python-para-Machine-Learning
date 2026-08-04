@@ -45,4 +45,21 @@ for horario in horarios_dos_erros:
         print(horario, "-", quantidade, "erro(s)")
         horarios_contabilizados.append(horario)
 
+maior_quantidade = 0
+horarios_com_mais_erros = []
+
+for horario in horarios_contabilizados:
+    quantidade = horarios_dos_erros.count(horario)
+
+    if quantidade > maior_quantidade:
+        maior_quantidade = quantidade
+        horarios_com_mais_erros = [horario]
+    elif quantidade == maior_quantidade:
+        horarios_com_mais_erros.append(horario)
+
+print("\nHorário(s) com mais erros:")
+
+for horario in horarios_com_mais_erros:
+    print(horario, "-", maior_quantidade, "erro(s)")
+
 input("\nPressione Enter para encerrar...")
