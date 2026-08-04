@@ -95,4 +95,16 @@ todas_pop_boas = all(pop_bom_booleano)
 print("\nExiste alguma música mediana de Rock?", existe_rock_mediana)
 print("Todas as músicas de Pop são boas?", todas_pop_boas)
 
+if quantidade_rock_boas > quantidade_pop_boas:
+    genero_com_mais_musicas_boas = "Rock"
+elif quantidade_pop_boas > quantidade_rock_boas:
+    genero_com_mais_musicas_boas = "Pop"
+else:
+    genero_com_mais_musicas_boas = "Empate"
+
+print(
+    "\nGênero com maior quantidade de músicas boas:",
+    genero_com_mais_musicas_boas
+)
+
 input("\nPressione Enter para encerrar...")
