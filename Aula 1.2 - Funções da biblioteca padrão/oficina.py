@@ -25,4 +25,10 @@ erros_encontrados = re.findall(padrao_erros, registros_log)
 
 print("Quantidade de erros encontrados:", len(erros_encontrados))
 
+print("\nHorários em que ocorreram erros:")
+
+for erro in erros_encontrados:
+    horario_encontrado = re.search(r"\d{2}:", erro)
+    print(horario_encontrado.group(0))
+
 input("\nPressione Enter para encerrar...")
