@@ -20,3 +20,5 @@ def categorizar(nota):
 print(categorizar(1))
 print(categorizar(3))
 print(categorizar(5))
+
+input ("\nPressione Enter para encerrar...")
