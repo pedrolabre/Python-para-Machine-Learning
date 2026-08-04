@@ -79,4 +79,20 @@ print("Músicas ruins:", quantidade_pop_ruins)
 print("Músicas medianas:", quantidade_pop_medianas)
 print("Músicas boas:", quantidade_pop_boas)
 
+rock_mediano_booleano = map(
+    lambda categoria: categoria == "mediana",
+    categorias_rock
+)
+
+pop_bom_booleano = map(
+    lambda categoria: categoria == "boa",
+    categorias_pop
+)
+
+existe_rock_mediana = any(rock_mediano_booleano)
+todas_pop_boas = all(pop_bom_booleano)
+
+print("\nExiste alguma música mediana de Rock?", existe_rock_mediana)
+print("Todas as músicas de Pop são boas?", todas_pop_boas)
+
 input("\nPressione Enter para encerrar...")
