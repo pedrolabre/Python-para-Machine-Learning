@@ -61,4 +61,22 @@ print("Ruins:", pop_ruins)
 print("Medianas:", pop_medianas)
 print("Boas:", pop_boas)
 
+quantidade_rock_ruins = len(rock_ruins)
+quantidade_rock_medianas = len(rock_medianas)
+quantidade_rock_boas = len(rock_boas)
+
+quantidade_pop_ruins = len(pop_ruins)
+quantidade_pop_medianas = len(pop_medianas)
+quantidade_pop_boas = len(pop_boas)
+
+print("\nRock:")
+print("Músicas ruins:", quantidade_rock_ruins)
+print("Músicas medianas:", quantidade_rock_medianas)
+print("Músicas boas:", quantidade_rock_boas)
+
+print("\nPop:")
+print("Músicas ruins:", quantidade_pop_ruins)
+print("Músicas medianas:", quantidade_pop_medianas)
+print("Músicas boas:", quantidade_pop_boas)
+
 input("\nPressione Enter para encerrar...")
