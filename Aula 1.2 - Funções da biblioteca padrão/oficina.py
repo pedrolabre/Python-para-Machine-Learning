@@ -27,8 +27,22 @@ print("Quantidade de erros encontrados:", len(erros_encontrados))
 
 print("\nHorários em que ocorreram erros:")
 
+horarios_dos_erros = []
+
 for erro in erros_encontrados:
     horario_encontrado = re.search(r"\d{2}:", erro)
-    print(horario_encontrado.group(0))
+    horario = horario_encontrado.group(0)
+    horarios_dos_erros.append(horario)
+    print(horario)
+
+print("\nQuantidade de erros por horário:")
+
+horarios_contabilizados = []
+
+for horario in horarios_dos_erros:
+    if horario not in horarios_contabilizados:
+        quantidade = horarios_dos_erros.count(horario)
+        print(horario, "-", quantidade, "erro(s)")
+        horarios_contabilizados.append(horario)
 
 input("\nPressione Enter para encerrar...")
