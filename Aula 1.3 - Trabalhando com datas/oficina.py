@@ -1,3 +1,10 @@
+import locale
+from datetime import datetime
+
+
+locale.setlocale(locale.LC_ALL, "Portuguese_Brazil.1252")
+
+
 aniversarios = [
     "01/02/1990",
     "22 de Maio de 1991",
@@ -17,6 +24,19 @@ formatos = [
     "%d de %B de %Y",
     "%d/%m/%Y"
 ]
+
+
+datas_aniversarios = []
+
+for i in range(len(aniversarios)):
+    data = datetime.strptime(aniversarios[i], formatos[i])
+    datas_aniversarios.append(data)
+
+
+print("Aniversários convertidos:")
+
+for data in datas_aniversarios:
+    print(data)
 
 
 input("\nPressione Enter para encerrar...")
