@@ -1,5 +1,5 @@
 import locale
-from datetime import datetime
+from datetime import date, datetime
 
 
 locale.setlocale(locale.LC_ALL, "Portuguese_Brazil.1252")
@@ -49,6 +49,18 @@ print("\nAniversários ordenados por mês e dia:")
 
 for data in aniversarios_ordenados:
     print(data)
+
+
+hoje = date.today()
+tem_aniversario = False
+
+for aniversario in aniversarios_ordenados:
+    if aniversario.month == hoje.month and aniversario.day == hoje.day:
+        tem_aniversario = True
+
+
+print(f"\nData de hoje: {hoje}")
+print(f"Há aniversário hoje? {tem_aniversario}")
 
 
 input("\nPressione Enter para encerrar...")
