@@ -39,4 +39,16 @@ for data in datas_aniversarios:
     print(data)
 
 
+aniversarios_ordenados = sorted(
+    datas_aniversarios,
+    key=lambda data: (data.month, data.day)
+)
+
+
+print("\nAniversários ordenados por mês e dia:")
+
+for data in aniversarios_ordenados:
+    print(data)
+
+
 input("\nPressione Enter para encerrar...")
