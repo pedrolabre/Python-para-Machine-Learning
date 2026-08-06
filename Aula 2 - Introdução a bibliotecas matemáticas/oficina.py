@@ -1,5 +1,25 @@
 import random
 
+def identificar_jogada_mais_usada(historico):
+    quantidade_pedra = 0
+    quantidade_papel = 0
+    quantidade_tesoura = 0
+
+    for jogada in historico:
+        if jogada == "Pedra":
+            quantidade_pedra += 1
+        elif jogada == "Papel":
+            quantidade_papel += 1
+        else:
+            quantidade_tesoura += 1
+
+    if quantidade_pedra >= quantidade_papel and quantidade_pedra >= quantidade_tesoura:
+        return "Pedra"
+    elif quantidade_papel >= quantidade_pedra and quantidade_papel >= quantidade_tesoura:
+        return "Papel"
+    else:
+        return "Tesoura"
+
 opcoes = ["Pedra", "Papel", "Tesoura"]
 historico_jogadas = []
 
@@ -23,7 +43,17 @@ while True:
         else:
             jogada_jogador = "Tesoura"
 
-        jogada_maquina = random.choice(opcoes)
+        if len(historico_jogadas) < 5:
+            jogada_maquina = random.choice(opcoes)
+        else:
+            jogada_mais_usada = identificar_jogada_mais_usada(historico_jogadas)
+
+            if jogada_mais_usada == "Pedra":
+                jogada_maquina = "Papel"
+            elif jogada_mais_usada == "Papel":
+                jogada_maquina = "Tesoura"
+            else:
+                jogada_maquina = "Pedra"
 
         print(f"\nSua jogada -> {jogada_jogador}")
         print(f"Jogada da máquina -> {jogada_maquina}")
