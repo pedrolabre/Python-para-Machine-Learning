@@ -26,6 +26,17 @@ while True:
 
         print(f"\nSua jogada -> {jogada_jogador}")
         print(f"Jogada da máquina -> {jogada_maquina}")
+
+        if jogada_jogador == jogada_maquina:
+            print("Empate!")
+        elif (
+            jogada_jogador == "Pedra" and jogada_maquina == "Tesoura"
+            or jogada_jogador == "Papel" and jogada_maquina == "Pedra"
+            or jogada_jogador == "Tesoura" and jogada_maquina == "Papel"
+        ):
+            print("Você ganhou!")
+        else:
+            print("Você perdeu!")
     else:
         print("\nOpção inválida.")
 
