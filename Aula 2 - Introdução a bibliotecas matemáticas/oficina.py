@@ -1,3 +1,7 @@
+import random
+
+opcoes = ["Pedra", "Papel", "Tesoura"]
+
 while True:
     print("\nEscolha uma opção (1, 2, 3 ou 4):")
     print("1-Pedra")
@@ -18,7 +22,10 @@ while True:
         else:
             jogada_jogador = "Tesoura"
 
+        jogada_maquina = random.choice(opcoes)
+
         print(f"\nSua jogada -> {jogada_jogador}")
+        print(f"Jogada da máquina -> {jogada_maquina}")
     else:
         print("\nOpção inválida.")
 
