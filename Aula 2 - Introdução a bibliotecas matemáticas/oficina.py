@@ -1,6 +1,7 @@
 import random
 
 opcoes = ["Pedra", "Papel", "Tesoura"]
+historico_jogadas = []
 
 while True:
     print("\nEscolha uma opção (1, 2, 3 ou 4):")
@@ -37,6 +38,10 @@ while True:
             print("Você ganhou!")
         else:
             print("Você perdeu!")
+
+        historico_jogadas.append(jogada_jogador)
+
+        print(f"Histórico do jogador -> {historico_jogadas}")
     else:
         print("\nOpção inválida.")
 
