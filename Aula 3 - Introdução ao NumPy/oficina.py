@@ -1,0 +1,24 @@
+import numpy as np
+
+
+visualizacao_stories = np.array([
+    [187, 120, 88, 70, 130, 168, 213],
+    [0, 0, 42, 0, 0, 55, 77],
+    [91, 0, 61, 0, 71, 121, 271],
+    [0, 0, 0, 0, 187, 0, 0],
+    [42, 23, 34, 0, 39, 29, 36]
+])
+
+pessoas = ['Raquel', 'Lucas', 'Daniel', 'Natalia', 'Anderson']
+dias_semana = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
+
+
+media_visualizacoes_dia = visualizacao_stories.mean(axis=0)
+
+print("Média de visualizações por dia:")
+
+for i in range(len(dias_semana)):
+    print(f"{dias_semana[i]}: {media_visualizacoes_dia[i]}")
+
+
+input("\nPressione Enter para encerrar...")
