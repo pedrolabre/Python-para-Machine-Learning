@@ -29,4 +29,13 @@ print(
     f"{soma_visualizacoes_dia[indice_dia_mais_visualizacoes]}"
 )
 
+soma_visualizacoes_pessoa = visualizacao_stories.sum(axis=1)
+indice_pessoa_mais_visualizacoes = soma_visualizacoes_pessoa.argmax()
+
+print("\nPessoa com mais visualizações:")
+print(
+    f"{pessoas[indice_pessoa_mais_visualizacoes]}: "
+    f"{soma_visualizacoes_pessoa[indice_pessoa_mais_visualizacoes]}"
+)
+
 input("\nPressione Enter para encerrar...")
