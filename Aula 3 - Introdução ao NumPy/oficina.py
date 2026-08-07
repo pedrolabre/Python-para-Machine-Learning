@@ -1,4 +1,5 @@
 import numpy as np
+import numpy.ma as ma
 
 
 visualizacao_stories = np.array([
@@ -37,5 +38,21 @@ print(
     f"{pessoas[indice_pessoa_mais_visualizacoes]}: "
     f"{soma_visualizacoes_pessoa[indice_pessoa_mais_visualizacoes]}"
 )
+
+visualizacao_stories_invalidos = np.array([
+    [52, 68, 97, 55, -1, 98, -1],
+    [53, -1, 38, -1, -1, 72, 49],
+    [88, -1, 64, -1, 77, 130, 43],
+    [-1, 30, -1, -1, -1, 182, -1],
+    [41, 20, 33, -1, 37, 23, 7]
+])
+
+visualizacao_stories_mascarados = ma.masked_where(
+    visualizacao_stories_invalidos == -1,
+    visualizacao_stories_invalidos
+)
+
+print("\nDados da segunda semana com valores inválidos mascarados:")
+print(visualizacao_stories_mascarados)
 
 input("\nPressione Enter para encerrar...")
