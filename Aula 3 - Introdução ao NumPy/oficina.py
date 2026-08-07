@@ -55,4 +55,48 @@ visualizacao_stories_mascarados = ma.masked_where(
 print("\nDados da segunda semana com valores inválidos mascarados:")
 print(visualizacao_stories_mascarados)
 
+visualizacao_stories_duas_semanas = np.array([
+    visualizacao_stories,
+    visualizacao_stories_invalidos
+])
+
+visualizacao_stories_duas_semanas = ma.masked_where(
+    visualizacao_stories_duas_semanas == -1,
+    visualizacao_stories_duas_semanas
+)
+
+visualizacao_stories_por_dia = visualizacao_stories_duas_semanas.reshape((10, 7))
+
+media_visualizacoes_dia_duas_semanas = visualizacao_stories_por_dia.mean(axis=0)
+
+print("\nMédia de visualizações por dia nas duas semanas:")
+
+for i in range(len(dias_semana)):
+    print(f"{dias_semana[i]}: {media_visualizacoes_dia_duas_semanas[i]}")
+
+
+soma_visualizacoes_dia_duas_semanas = visualizacao_stories_por_dia.sum(axis=0)
+indice_dia_mais_visualizacoes_duas_semanas = (
+    soma_visualizacoes_dia_duas_semanas.argmax()
+)
+
+print("\nDia com mais visualizações nas duas semanas:")
+print(
+    f"{dias_semana[indice_dia_mais_visualizacoes_duas_semanas]}: "
+    f"{soma_visualizacoes_dia_duas_semanas[indice_dia_mais_visualizacoes_duas_semanas]}"
+)
+
+
+soma_visualizacoes_pessoa_dia = visualizacao_stories_duas_semanas.sum(axis=0)
+soma_visualizacoes_pessoa_duas_semanas = soma_visualizacoes_pessoa_dia.sum(axis=1)
+indice_pessoa_mais_visualizacoes_duas_semanas = (
+    soma_visualizacoes_pessoa_duas_semanas.argmax()
+)
+
+print("\nPessoa com mais visualizações nas duas semanas:")
+print(
+    f"{pessoas[indice_pessoa_mais_visualizacoes_duas_semanas]}: "
+    f"{soma_visualizacoes_pessoa_duas_semanas[indice_pessoa_mais_visualizacoes_duas_semanas]}"
+)
+
 input("\nPressione Enter para encerrar...")
