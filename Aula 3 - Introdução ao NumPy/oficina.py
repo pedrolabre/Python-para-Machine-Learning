@@ -20,5 +20,13 @@ print("Média de visualizações por dia:")
 for i in range(len(dias_semana)):
     print(f"{dias_semana[i]}: {media_visualizacoes_dia[i]}")
 
+soma_visualizacoes_dia = visualizacao_stories.sum(axis=0)
+indice_dia_mais_visualizacoes = soma_visualizacoes_dia.argmax()
+
+print("\nDia com mais visualizações:")
+print(
+    f"{dias_semana[indice_dia_mais_visualizacoes]}: "
+    f"{soma_visualizacoes_dia[indice_dia_mais_visualizacoes]}"
+)
 
 input("\nPressione Enter para encerrar...")
